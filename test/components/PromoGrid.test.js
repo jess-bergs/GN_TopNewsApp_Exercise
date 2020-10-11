@@ -19,8 +19,8 @@ describe('The promo grid component', () => {
     });
 
     it('should wrap its children', async () => {
-        expect(wrapper.find('.promo-grid__item-wrapper')).toHaveLength(3);
-        const itemWrappers = wrapper.find('.promo-grid__item-wrapper');
+        expect(wrapper.find('.promo-grid__gel-grid-item')).toHaveLength(3);
+        const itemWrappers = wrapper.find('.promo-grid__gel-grid-item');
         itemWrappers.forEach(itemWrapper => {
             itemWrapper.find('.mockChild');
         });
