@@ -32,4 +32,14 @@ describe('The Top News page', () => {
     it('renders the headlines as promo components', async () => {
         expect(wrapper.find('Promo')).toHaveLength(headlineFixtures.length);
     });
+
+    describe('when a list item is clicked', () => {
+        it('the page headline shows the name of the currently selected country', async () => {
+            const listItem = wrapper.find('ListItem').at(1);
+            listItem.simulate('click');
+            expect(wrapper.find('.top-news-page__current-country').text()).toEqual(
+                mockCountries[1].name
+            );
+        });
+    });
 });
