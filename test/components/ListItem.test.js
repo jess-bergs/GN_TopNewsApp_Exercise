@@ -13,7 +13,7 @@ describe('The list item', () => {
         expect(wrapper.find('.list-item__container')).toHaveLength(1);
     });
 
-    it('should render with the passes title prop', async () => {
+    it('should render the title props as text', async () => {
         expect(wrapper.find('.list-item__container').text()).toEqual(mockTitle);
     });
 });
