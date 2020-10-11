@@ -19,7 +19,6 @@ describe('The list component', () => {
     });
 
     it('should render the children as a list', async () => {
-        console.log(wrapper.html());
         expect(wrapper.find('ul')).toHaveLength(1);
         expect(wrapper.find('li')).toHaveLength(3);
     });
