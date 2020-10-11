@@ -1,4 +1,5 @@
 import React from 'react';
+import { node } from 'prop-types';
 
 const PromoGrid = ({ children }) => (
     <div className="promo-grid__container">
@@ -9,5 +10,9 @@ const PromoGrid = ({ children }) => (
         ))}
     </div>
 );
+
+PromoGrid.propTypes = {
+    children: node.isRequired,
+};
 
 export default PromoGrid;
