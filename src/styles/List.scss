@@ -8,8 +8,8 @@ $item-border-color: #fff;
 .list__container {
     background-color: $background-color;
     font-family: Arial, Helvetica, freesans, sans-serif;
-    padding: 12px;
     margin: 0;
+    padding: 12px;
 
     .list__item-wrapper {
         border-right: 1px solid $item-border-color;

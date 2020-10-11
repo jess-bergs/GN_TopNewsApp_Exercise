@@ -8,7 +8,7 @@ const PromoGrid = ({ children }) => (
         <div className="promo-grid__gel-grid-wrapper">
             {children.map((child, index) => (
                 <div className="promo-grid__gel-grid-item" key={index}>
-                    <span className="promo_grid__gel-grid-content-wrapper">{child}</span>
+                    <span className="promo-grid__gel-grid-content-wrapper">{child}</span>
                 </div>
             ))}
         </div>

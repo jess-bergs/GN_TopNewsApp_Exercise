@@ -11,8 +11,10 @@ $spacing-small: 5px;
 $spacing-medium: 10px;
 $spacing-large: 25px;
 
+$bg-color: #efefef;
+
 .promo-grid__container {
-    background-color: #efefef;
+    background-color: $bg-color;
     font-family: Arial, Helvetica, freesans, sans-serif;
     padding: 10px;
 
@@ -45,7 +47,7 @@ $spacing-large: 25px;
         }
     }
 
-    .promo_grid__gel-grid-content-wrapper {
+    .promo-grid__gel-grid-content-wrapper {
         display: flex;
         height: 100%;
         height: auto;

@@ -3,13 +3,14 @@
 @import '~gel-typography/typography';
 
 $text-color: #333;
+$bg-color: #fefefe;
 
 .promo__container {
     @include gel-typography('paragon-bold');
-    background-color: #fefefe;
+    background-color: $bg-color;
     color: $text-color;
     font-family: inherit;
     height: 100%;
-    width: 100%;
     padding: 5px;
+    width: 100%;
 }
