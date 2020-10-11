@@ -1,0 +1,9 @@
+{
+    "countries": [
+        { "name": "UK", "countryCode": "gb" },
+        { "name": "US", "countryCode": "us" },
+        { "name": "India", "countryCode": "in" },
+        { "name": "Australia", "countryCode": "au" },
+        { "name": "France", "countryCode": "fr" }
+    ]
+}
