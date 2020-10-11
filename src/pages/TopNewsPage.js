@@ -6,8 +6,8 @@ import PromoGrid from '../components/PromoGrid';
 import Promo from '../components/Promo';
 import headlineFixtures from '../../test/fixtures/headlinesFixture.json';
 
-const TopNewsPage = ({ countries }) => {
-    const [curListSelectionId, setCurListSelectionId] = useState('gb');
+const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
+    const [curListSelectionId, setCurListSelectionId] = useState(defaultSelectedCountryCode);
 
     const getCurrentCountryName = countryCode => {
         const country = countries.find(entry => entry.countryCode === countryCode);
