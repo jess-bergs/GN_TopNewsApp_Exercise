@@ -8,11 +8,11 @@ $item-border-color: #fff;
 .list__container {
     background-color: $background-color;
     font-family: Arial, Helvetica, freesans, sans-serif;
-    padding: 10px;
+    padding: 12px;
+    margin: 0;
 
     .list__item-wrapper {
-        border-color: $item-border-color;
-        border-right: 1px solid;
+        border-right: 1px solid $item-border-color;
         display: inline;
         padding-left: 15px;
         padding-right: 15px;
