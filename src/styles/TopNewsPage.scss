@@ -1,0 +1,18 @@
+@import '~gel-sass-tools/sass-tools';
+@import '~sass-mq/mq';
+@import '~gel-typography/typography';
+
+$bg-color: #efefef;
+
+.top-news-page__container {
+    font-family: Arial, Helvetica, freesans, sans-serif;
+}
+
+.top-news-page__content-panel {
+    background-color: $bg-color;
+}
+
+.top-news-page__current-country {
+    @include gel-typography('paragon-bold');
+    padding: 25px 0 10px 15px;
+}

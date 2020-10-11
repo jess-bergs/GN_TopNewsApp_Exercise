@@ -6,6 +6,8 @@ import PromoGrid from '../components/PromoGrid';
 import Promo from '../components/Promo';
 import headlineFixtures from '../../test/fixtures/headlinesFixture.json';
 
+import '../styles/TopNewsPage.scss';
+
 const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
     const [curListSelectionId, setCurListSelectionId] = useState(defaultSelectedCountryCode);
 
