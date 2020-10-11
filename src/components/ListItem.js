@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import '../styles/ListItem.scss';
 
-const ListItem = ({ title }) => <span className="list-item__container">{title}</span>;
+const ListItem = ({ title, ...props }) => (
+    <span {...props} className="list-item__container">
+        {title}
+    </span>
+);
 
 ListItem.propTypes = {
     title: PropTypes.string.isRequired,
