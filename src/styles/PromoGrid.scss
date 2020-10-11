@@ -1,0 +1,61 @@
+@import '~gel-sass-tools/sass-tools';
+@import '~sass-mq/mq';
+@import '~gel-typography/typography';
+@import '~gel-grid/grid';
+
+$mobile-columns: 12;
+$tablet-columns: 6;
+$laptop-columns: 4;
+
+$spacing-small: 5px;
+$spacing-medium: 10px;
+$spacing-large: 25px;
+
+.promo-grid__container {
+    background-color: #efefef;
+    font-family: Arial, Helvetica, freesans, sans-serif;
+    padding: 10px;
+
+    .promo-grid__gel-grid-wrapper {
+        @include gel-layout;
+        padding: $spacing-small;
+
+        @include mq($from: gel-bp-m) {
+            padding: $spacing-medium;
+        }
+    }
+
+    .promo-grid__gel-grid-item {
+        @include gel-layout-item;
+        @include gel-columns($mobile-columns);
+        display: flex;
+
+        padding-bottom: $spacing-large;
+        padding-left: 0;
+
+        @include mq($from: gel-bp-m) {
+            @include gel-columns($tablet-columns);
+            padding-bottom: $spacing-large;
+            padding-left: 0;
+        }
+
+        @include mq($from: gel-bp-xl) {
+            @include gel-columns($laptop-columns);
+            padding-left: 0;
+        }
+    }
+
+    .promo_grid__gel-grid-content-wrapper {
+        display: flex;
+        height: 100%;
+        height: auto;
+        padding-left: $spacing-medium;
+        width: 100%;
+
+        @include mq($from: gel-bp-m) {
+            flex-direction: row;
+            padding-left: $spacing-medium;
+            width: 100%;
+        }
+    }
+}

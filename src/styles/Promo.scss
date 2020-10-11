@@ -1,0 +1,15 @@
+@import '~gel-sass-tools/sass-tools';
+@import '~sass-mq/mq';
+@import '~gel-typography/typography';
+
+$text-color: #333;
+
+.promo__container {
+    @include gel-typography('paragon-bold');
+    background-color: #fefefe;
+    color: $text-color;
+    font-family: inherit;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
