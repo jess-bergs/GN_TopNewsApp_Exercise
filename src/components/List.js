@@ -1,4 +1,5 @@
 import React from 'react';
+import { node } from 'prop-types';
 
 const List = ({ children }) => (
     <ul className="list__container">
@@ -7,5 +8,9 @@ const List = ({ children }) => (
         ))}
     </ul>
 );
+
+List.propTypes = {
+    children: node.isRequired,
+};
 
 export default List;
