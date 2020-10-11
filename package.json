@@ -8,10 +8,14 @@
     },
     "homepage": "http://localhost:8080",
     "dependencies": {
+        "gel-grid": "^4.0.0",
+        "gel-sass-tools": "^1.2.1",
+        "gel-typography": "^2.0.5",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
         "react-router-dom": "^5.2.0",
-        "react-test-renderer": "^16.13.0"
+        "react-test-renderer": "^16.13.0",
+        "sass-mq": "^3.3.2"
     },
     "sasslintConfig": "./.sass-lint.yml",
     "scripts": {
