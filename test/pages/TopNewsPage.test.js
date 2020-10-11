@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TopNewsPage from '../src/TopNewsPage';
+import TopNewsPage from '../../src/pages/TopNewsPage';
 
 describe('The Top News page', () => {
     let wrapper;

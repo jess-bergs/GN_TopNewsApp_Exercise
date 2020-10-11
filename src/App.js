@@ -1,5 +1,5 @@
 import React from 'react';
-import TopNewsPage from './TopNewsPage';
+import TopNewsPage from './pages/TopNewsPage';
 import topNewsPageConfig from './topNewsPageConfig.json';
 
 const App = () => (

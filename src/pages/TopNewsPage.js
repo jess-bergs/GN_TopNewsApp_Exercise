@@ -1,6 +1,6 @@
 import React from 'react';
-import List from './List';
-import ListItem from './ListItem';
+import List from '../components/List';
+import ListItem from '../components/ListItem';
 
 const TopNewsPage = ({ countries }) => (
     <div className="top-news-page__container">
