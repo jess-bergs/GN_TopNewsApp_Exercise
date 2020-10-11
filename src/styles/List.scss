@@ -1,0 +1,20 @@
+@import '~gel-sass-tools/sass-tools';
+@import '~sass-mq/mq';
+@import '~gel-typography/typography';
+
+$background-color: #777;
+$item-border-color: #fff;
+
+.list__container {
+    background-color: $background-color;
+    font-family: Arial, Helvetica, freesans, sans-serif;
+    padding: 10px;
+
+    .list__item-wrapper {
+        border-color: $item-border-color;
+        border-right: 1px solid;
+        display: inline;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
