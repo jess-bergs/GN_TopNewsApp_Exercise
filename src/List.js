@@ -1,5 +1,5 @@
 import React from 'react';
 
-const List = () => <div />;
+const List = () => <div className="list__container" />;
 
 export default List;
