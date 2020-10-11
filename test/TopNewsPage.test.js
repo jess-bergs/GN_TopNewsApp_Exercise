@@ -20,7 +20,7 @@ describe('The Top News page', () => {
         expect(wrapper.find('List')).toHaveLength(1);
     });
 
-    it('renders the countries array prop as list item comps', async () => {
+    it('renders the countries array prop as list item components', async () => {
         expect(wrapper.find('ListItem')).toHaveLength(mockCountries.length);
     });
 });
