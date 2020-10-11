@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Promo = () => <div />;
+const Promo = () => <div className="promo__container"></div>;
 
 export default Promo;
