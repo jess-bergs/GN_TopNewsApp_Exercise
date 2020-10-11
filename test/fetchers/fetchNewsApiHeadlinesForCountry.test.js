@@ -11,15 +11,25 @@ describe('The fetcher', () => {
         jest.clearAllMocks();
     });
 
-    it('for a given country code, the fetcher returns the received articles', async () => {
-        const mockArticles = ['some article1', 'some article2'];
+    describe('for a valid country code', () => {
+        it('the fetcher returns the received articles', async () => {
+            const mockArticles = ['some article1', 'some article2'];
 
-        mockAxios.get.mockImplementationOnce(() =>
-            Promise.resolve({ data: { articles: mockArticles } })
-        );
+            mockAxios.get.mockImplementationOnce(() =>
+                Promise.resolve({ data: { articles: mockArticles } })
+            );
 
-        const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
-        expect(result).toEqual(mockArticles);
+            const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
+            expect(result).toEqual(mockArticles);
+        });
+    });
+
+    describe('for an invalid country code', () => {
+        it('the fetcher returns an empty array', async () => {
+            mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: {} }));
+            const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
+            expect(result).toEqual([]);
+        });
     });
 
     describe('if a network error occurs', () => {
