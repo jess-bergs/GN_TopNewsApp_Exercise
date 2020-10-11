@@ -11,4 +11,8 @@ describe('The Top News page', () => {
     it('should render with the correct base class', async () => {
         expect(wrapper.find('.top-news-page__container')).toHaveLength(1);
     });
+
+    it('should render have a List component', async () => {
+        expect(wrapper.find('List')).toHaveLength(1);
+    });
 });
