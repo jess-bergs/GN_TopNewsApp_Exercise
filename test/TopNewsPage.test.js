@@ -4,8 +4,12 @@ import TopNewsPage from '../src/TopNewsPage';
 
 describe('The Top News page', () => {
     let wrapper;
+    const mockCountries = [
+        { name: 'Australia', countryCode: 'au' },
+        { name: 'France', countryCode: 'fr' },
+    ];
     beforeAll(() => {
-        wrapper = shallow(<TopNewsPage />);
+        wrapper = shallow(<TopNewsPage countries={mockCountries} />);
     });
 
     it('should render with the correct base class', async () => {
@@ -14,5 +18,9 @@ describe('The Top News page', () => {
 
     it('should render have a List component', async () => {
         expect(wrapper.find('List')).toHaveLength(1);
+    });
+
+    it('renders the countries array prop as list item comps', async () => {
+        expect(wrapper.find('ListItem')).toHaveLength(mockCountries.length);
     });
 });
