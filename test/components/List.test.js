@@ -6,7 +6,7 @@ describe('The list component', () => {
     let wrapper;
     beforeAll(() => {
         wrapper = shallow(
-            <List>
+            <List layout="horizontal">
                 <div className="mockChild" />
                 <div className="mockChild" />
                 <div className="mockChild" />
@@ -25,5 +25,9 @@ describe('The list component', () => {
         itemWrappers.forEach(itemWrapper => {
             itemWrapper.find('.mockChild');
         });
+    });
+
+    it('should render the correct layout class for the passed layout prop', async () => {
+        expect(wrapper.find('.list__layout--horizontal')).toHaveLength(1);
     });
 });
