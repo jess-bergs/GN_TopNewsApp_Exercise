@@ -4,7 +4,9 @@ A single-page Node.js/React app for viewing international top headlines.
 
 ## Local development
 
-Prerequisites: News API key. You can get one here: https://newsapi.org/. Free for development purposes.
+> Pre-requisites:
+>
+> -   News API key. You can get one here: https://newsapi.org/. Free for development purposes.
 
 Clone the repo, then install the dependencies by running `npm install`
 
