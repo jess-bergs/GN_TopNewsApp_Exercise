@@ -30,7 +30,21 @@ describe('The list with dropdown-overflow component', () => {
     describe('for a given max count of visible Items', () => {
         it('the list will only render the max count of ListItems', async () => {
             const listContainer = wrapper.find('.list-with-dropdown__list').find('List');
-            expect(listContainer.find('.list__item-wrapper')).toHaveLength(mockMaxVisibleListItems);
+            expect(listContainer.find('.list__item-wrapper')).toHaveLength(
+                mockMaxVisibleListItems + 1
+            );
+        });
+
+        describe('if the ListItems exceed the max count of visible items', () => {});
+
+        it('the list will render a "more" button', async () => {
+            const listContainer = wrapper.find('.list-with-dropdown__list').find('List');
+            expect(
+                listContainer
+                    .find('.list__item-wrapper')
+                    .at(3)
+                    .text()
+            ).toEqual('more');
         });
     });
 });
