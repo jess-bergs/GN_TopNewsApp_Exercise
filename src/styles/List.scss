@@ -18,6 +18,7 @@ $item-border-color: #999;
             padding-top: $gel-spacing-unit * 1.5;
         }
     }
+
     &--horizontal {
         .list__item-wrapper {
             border-right: 1px solid $item-border-color;
