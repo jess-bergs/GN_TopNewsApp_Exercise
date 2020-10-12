@@ -11,7 +11,7 @@ describe('The fetcher', () => {
         jest.clearAllMocks();
     });
 
-    describe('for a valid country code', () => {
+    describe('for a given country code', () => {
         it('the fetcher returns the received articles', async () => {
             const mockArticles = ['some article1', 'some article2'];
 
@@ -21,14 +21,6 @@ describe('The fetcher', () => {
 
             const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
             expect(result).toEqual(mockArticles);
-        });
-    });
-
-    describe('for an invalid country code', () => {
-        it('the fetcher returns an empty array', async () => {
-            mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: {} }));
-            const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
-            expect(result).toEqual([]);
         });
     });
 
