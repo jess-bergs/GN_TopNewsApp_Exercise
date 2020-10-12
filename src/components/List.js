@@ -1,10 +1,10 @@
 import React from 'react';
-import { node } from 'prop-types';
+import propTypes, { node } from 'prop-types';
 
 import '../styles/List.scss';
 
-const List = ({ children }) => (
-    <ul className="list__container">
+const List = ({ children, layout }) => (
+    <ul className={`list__container list__layout--${layout}`}>
         {children.map((child, index) => (
             <li className="list__item-wrapper" key={index}>
                 {child}
@@ -15,6 +15,11 @@ const List = ({ children }) => (
 
 List.propTypes = {
     children: node.isRequired,
+    layout: propTypes.string.isRequired,
+};
+
+List.defaultProps = {
+    layout: 'vertical',
 };
 
 export default List;
