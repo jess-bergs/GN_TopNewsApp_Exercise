@@ -16,7 +16,7 @@ const PromoGrid = ({ children }) => (
 );
 
 PromoGrid.propTypes = {
-    children: node.isRequired,
+    children: node,
 };
 
 export default PromoGrid;

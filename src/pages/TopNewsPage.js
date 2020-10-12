@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import List from '../components/List';
 import ListItem from '../components/ListItem';
 import PromoGrid from '../components/PromoGrid';
 import Promo from '../components/Promo';
-import headlineFixtures from '../../test/fixtures/headlinesFixture.json';
+import fetchNewsApiHeadlinesForCountry from '../fetchers/fetchNewsApiHeadlinesForCountry';
 
 import '../styles/TopNewsPage.scss';
 
 const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
     const [curListSelectionId, setCurListSelectionId] = useState(defaultSelectedCountryCode);
+    const [curHeadlines, setCurHeadlines] = useState([]);
+
+    const updateHeadlinesForCountry = async (countryCode, maxHeadlines) => {
+        await fetchNewsApiHeadlinesForCountry(countryCode).then(headlines =>
+            setCurHeadlines(headlines.slice(0, maxHeadlines))
+        );
+    };
+
+    useEffect(() => {
+        updateHeadlinesForCountry(curListSelectionId, 5);
+    }, [curListSelectionId]);
 
     const getCurrentCountryName = countryCode => {
         const country = countries.find(entry => entry.countryCode === countryCode);
@@ -32,8 +43,8 @@ const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
                     {getCurrentCountryName(curListSelectionId)}
                 </div>
                 <PromoGrid>
-                    {headlineFixtures.map((headline, index) => (
-                        <Promo title={headline} key={index} />
+                    {curHeadlines.map((headline, index) => (
+                        <Promo title={headline.title} key={index} />
                     ))}
                 </PromoGrid>
             </div>
