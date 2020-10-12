@@ -2,12 +2,9 @@
 @import '~sass-mq/mq';
 @import '~gel-typography/typography';
 
-$background-color: #777;
-$item-border-color: #fff;
+$item-border-color: #999;
 
 .list__container {
-    background-color: $background-color;
-    font-family: Arial, Helvetica, freesans, sans-serif;
     margin: 0;
     padding: $gel-spacing-unit * 1.5;
 

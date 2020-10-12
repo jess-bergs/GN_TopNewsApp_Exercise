@@ -1,0 +1,16 @@
+$color--gray: #777;
+$color--blk: #333;
+$color--wht: #fefefe;
+
+.list-with-dropdown__container {
+    color: $color--wht;
+    font-family: Arial, Helvetica, freesans, sans-serif;
+
+    .list-with-dropdown__list {
+        background-color: $color--gray;
+    }
+
+    .list-with-dropdown__dropdown {
+        background-color: $color--blk;
+    }
+}

@@ -2,11 +2,8 @@
 @import '~sass-mq/mq';
 @import '~gel-typography/typography';
 
-$text-color: #fff;
-
 .list-item__container {
     @include gel-typography('pica-bold');
-    color: $text-color;
     font-family: inherit;
 
     &:hover {
