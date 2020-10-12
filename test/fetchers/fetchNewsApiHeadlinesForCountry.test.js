@@ -13,14 +13,14 @@ describe('The fetcher', () => {
 
     describe('for a given country code', () => {
         it('the fetcher returns the received articles', async () => {
-            const mockArticles = ['some article1', 'some article2'];
+            const mockArticles = [{ title: 'some article1' }, { title: 'some article2' }];
 
             mockAxios.get.mockImplementationOnce(() =>
                 Promise.resolve({ data: { articles: mockArticles } })
             );
 
             const result = await fetchNewsApiHeadlinesForCountry(mockCountryCode);
-            expect(result).toEqual(mockArticles);
+            expect(result).toEqual(mockArticles.map(article => article.title));
         });
     });
 
