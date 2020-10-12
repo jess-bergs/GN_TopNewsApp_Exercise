@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import List from '../components/List';
 import ListItem from '../components/ListItem';
 import PromoGrid from '../components/PromoGrid';
 import Promo from '../components/Promo';
+import ListWithDropdownOverflow from '../components/ListWithDropdownOverflow';
 import fetchNewsApiHeadlinesForCountry from '../fetchers/fetchNewsApiHeadlinesForCountry';
 
 import '../styles/TopNewsPage.scss';
@@ -29,15 +29,30 @@ const TopNewsPage = ({ countries, defaultSelectedCountryCode, headlinesMaxCount 
 
     return (
         <div className="top-news-page__container">
-            <List>
-                {countries.map(country => (
-                    <ListItem
-                        title={country.name}
-                        onClick={() => setCurListSelectionId(country.countryCode)}
-                        key={country.countryCode}
-                    />
-                ))}
-            </List>
+            <div className="top-news-page__list-with-overflow--mobile">
+                <ListWithDropdownOverflow maxVisibleListItems={3}>
+                    {countries.map(country => (
+                        <ListItem
+                            title={country.name}
+                            onClick={() => setCurListSelectionId(country.countryCode)}
+                            key={country.countryCode}
+                        />
+                    ))}
+                </ListWithDropdownOverflow>
+            </div>
+
+            <div className="top-news-page__list-with-overflow--from-tablet">
+                <ListWithDropdownOverflow maxVisibleListItems={10}>
+                    {countries.map(country => (
+                        <ListItem
+                            title={country.name}
+                            onClick={() => setCurListSelectionId(country.countryCode)}
+                            key={country.countryCode}
+                        />
+                    ))}
+                </ListWithDropdownOverflow>
+            </div>
+
             <div className="top-news-page__content-panel">
                 <div className="top-news-page__current-country">
                     {getCurrentCountryName(curListSelectionId)}
