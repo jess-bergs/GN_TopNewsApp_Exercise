@@ -9,10 +9,14 @@ $bg-color: #efefef;
 }
 
 .top-news-page__content-panel {
-    background-color: $bg-color;
+    padding: $gel-spacing-unit * 3;
 }
 
 .top-news-page__current-country {
     @include gel-typography('paragon-bold');
-    padding: 25px 0 10px 15px;
+    padding-bottom: $gel-spacing-unit * 2;
+
+    @include mq($from: gel-bp-m) {
+        padding: 0 0 $gel-spacing-unit * 2 $gel-spacing-unit;
+    }
 }
