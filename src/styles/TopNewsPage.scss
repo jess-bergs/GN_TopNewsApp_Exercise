@@ -20,3 +20,18 @@ $bg-color: #efefef;
         padding: 0 0 $gel-spacing-unit * 2 $gel-spacing-unit;
     }
 }
+
+.top-news-page__list-with-overflow {
+    &--from-tablet {
+        display: none;
+        @include mq($from: gel-bp-m) {
+            display: block;
+        }
+    }
+    &--mobile {
+        display: block;
+        @include mq($from: gel-bp-m) {
+            display: none;
+        }
+    }
+}
