@@ -16,12 +16,21 @@ describe('The Top News page', () => {
         expect(wrapper.find('.top-news-page__container')).toHaveLength(1);
     });
 
-    it('should have a List component', async () => {
-        expect(wrapper.find('List')).toHaveLength(1);
+    it('should have a ListWithDropOverflow component for mobile viewing', async () => {
+        const mobileContainer = wrapper.find('.top-news-page__list-with-overflow--mobile');
+        expect(mobileContainer).toHaveLength(1);
+        expect(mobileContainer.find('ListWithDropdownOverflow')).toHaveLength(1);
+    });
+
+    it('should have a ListWithDropOverflow component for tablet or larger devices', async () => {
+        const tabletContainer = wrapper.find('.top-news-page__list-with-overflow--from-tablet');
+        expect(tabletContainer).toHaveLength(1);
+        expect(tabletContainer.find('ListWithDropdownOverflow')).toHaveLength(1);
     });
 
     it('renders the countries array prop as list item components', async () => {
-        expect(wrapper.find('ListItem')).toHaveLength(mockCountries.length);
+        const tabletContainer = wrapper.find('.top-news-page__list-with-overflow--from-tablet');
+        expect(tabletContainer.find('ListItem')).toHaveLength(mockCountries.length);
     });
 
     it('should have a PromoGrid component', async () => {
