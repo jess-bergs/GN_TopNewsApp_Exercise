@@ -8,7 +8,7 @@ import fetchNewsApiHeadlinesForCountry from '../fetchers/fetchNewsApiHeadlinesFo
 
 import '../styles/TopNewsPage.scss';
 
-const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
+const TopNewsPage = ({ countries, defaultSelectedCountryCode, headlinesMaxCount }) => {
     const [curListSelectionId, setCurListSelectionId] = useState(defaultSelectedCountryCode);
     const [curHeadlines, setCurHeadlines] = useState([]);
 
@@ -19,7 +19,7 @@ const TopNewsPage = ({ countries, defaultSelectedCountryCode }) => {
     };
 
     useEffect(() => {
-        updateHeadlinesForCountry(curListSelectionId, 5);
+        updateHeadlinesForCountry(curListSelectionId, headlinesMaxCount);
     }, [curListSelectionId]);
 
     const getCurrentCountryName = countryCode => {

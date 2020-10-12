@@ -6,5 +6,6 @@
         { "name": "Australia", "countryCode": "au" },
         { "name": "France", "countryCode": "fr" }
     ],
-    "defaultSelectedCountryCode": "gb"
+    "defaultSelectedCountryCode": "gb",
+    "headlinesMaxCount": 5
 }
