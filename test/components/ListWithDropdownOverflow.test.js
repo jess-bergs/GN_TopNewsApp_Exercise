@@ -19,6 +19,8 @@ describe('The list with dropdown-overflow component', () => {
         <div className="mockChild" />,
         <div className="mockChild" />,
         <div className="mockChild" />,
+        <div className="mockChild" />,
+        <div className="mockChild" />,
     ];
 
     beforeAll(() => {
@@ -53,6 +55,14 @@ describe('The list with dropdown-overflow component', () => {
                 expect(listContainer.find('.list-with-dropdown__toggle-button')).toHaveLength(1);
             });
 
+            it('the list will render a dropdown with the overflowing items', async () => {
+                const dropdownContainer = wrapperOverflowing.find('.list-with-dropdown__dropdown');
+                expect(dropdownContainer).toHaveLength(1);
+                expect(dropdownContainer.find('.list__item-wrapper')).toHaveLength(
+                    mockChildrenOverflowing.length - mockMaxVisibleListItems
+                );
+            });
+
             it('the list will only render the max count of ListItems', async () => {
                 const listContainer = wrapperOverflowing
                     .find('.list-with-dropdown__list')
@@ -67,6 +77,10 @@ describe('The list with dropdown-overflow component', () => {
             it('the list will not render a "more" button', async () => {
                 const listContainer = wrapper.find('.list-with-dropdown__list').find('List');
                 expect(listContainer.find('.list-with-dropdown__toggle-button')).toHaveLength(0);
+            });
+
+            it('the list will not render a dropdown', async () => {
+                expect(wrapper.find('.list-with-dropdow__dropdown')).toHaveLength(0);
             });
 
             it('the list will render all ListItems', async () => {
