@@ -2,15 +2,18 @@
 @import '~sass-mq/mq';
 @import '~gel-typography/typography';
 
-$text-color: #333;
-$bg-color: #fefefe;
+$bg-color: #f2f1f1;
 
 .promo__container {
-    @include gel-typography('paragon-bold');
+    @include gel-typography('double-pica-bold');
     background-color: $bg-color;
-    color: $text-color;
+    display: flex;
     font-family: inherit;
     height: 100%;
-    padding: 5px;
+    padding: $gel-spacing-unit * 2 $gel-spacing-unit * 2 0;
     width: 100%;
+
+    @include mq($from: gel-bp-m) {
+        padding: $gel-spacing-unit * 3 $gel-spacing-unit * 3 0;
+    }
 }

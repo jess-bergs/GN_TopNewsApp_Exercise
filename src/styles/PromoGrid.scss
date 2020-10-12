@@ -7,34 +7,27 @@ $mobile-columns: 12;
 $tablet-columns: 6;
 $laptop-columns: 4;
 
-$spacing-small: 5px;
-$spacing-medium: 10px;
-$spacing-large: 25px;
+$spacing-small: $gel-spacing-unit;
+$spacing-medium: $gel-spacing-unit * 3;
+$spacing-large: $gel-spacing-unit * 6;
 
 .promo-grid__container {
     font-family: Arial, Helvetica, freesans, sans-serif;
-    padding: 10px;
 
     .promo-grid__gel-grid-wrapper {
         @include gel-layout;
-        padding: $spacing-small;
-
-        @include mq($from: gel-bp-m) {
-            padding: $spacing-medium;
-        }
     }
 
     .promo-grid__gel-grid-item {
         @include gel-layout-item;
         @include gel-columns($mobile-columns);
         display: flex;
-
-        padding-bottom: $spacing-large;
+        margin-bottom: $gel-spacing-unit * 3;
         padding-left: 0;
 
         @include mq($from: gel-bp-m) {
             @include gel-columns($tablet-columns);
-            padding-bottom: $spacing-large;
+            margin-bottom: $spacing-large;
             padding-left: 0;
         }
 
@@ -47,8 +40,7 @@ $spacing-large: 25px;
     .promo-grid__gel-grid-content-wrapper {
         display: flex;
         height: 100%;
-        height: auto;
-        padding-left: $spacing-medium;
+        padding-left: $spacing-small;
         width: 100%;
 
         @include mq($from: gel-bp-m) {
