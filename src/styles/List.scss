@@ -14,8 +14,8 @@ $item-border-color: #999;
         .list__item-wrapper {
             border-bottom: 1px solid $item-border-color;
             display: block;
-            padding-top: $gel-spacing-unit * 1.5;
             padding-bottom: $gel-spacing-unit;
+            padding-top: $gel-spacing-unit * 1.5;
         }
     }
     &--horizontal {
