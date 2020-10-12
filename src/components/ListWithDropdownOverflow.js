@@ -6,7 +6,7 @@ const ListWithDropdownOverflow = ({ children, maxVisibleListItems }) => {
     const isOverflowing = () => children.length > maxVisibleListItems;
 
     const DropDownToggleButton = () => (
-        <span className={'navigation-dropdow__toggle-button'}>
+        <span className={'list-with-dropdown__toggle-button'}>
             <ListItem title="more" />
         </span>
     );
@@ -22,6 +22,11 @@ const ListWithDropdownOverflow = ({ children, maxVisibleListItems }) => {
             <div className="list-with-dropdown__list">
                 <List>{getListItems()}</List>
             </div>
+            {isOverflowing() && (
+                <div className="list-with-dropdown__dropdown">
+                    <List>{children.slice(maxVisibleListItems)}</List>
+                </div>
+            )}
         </div>
     );
 };
