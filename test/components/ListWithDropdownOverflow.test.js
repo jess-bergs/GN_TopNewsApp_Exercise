@@ -50,7 +50,7 @@ describe('The list with dropdown-overflow component', () => {
                 const listContainer = wrapperOverflowing
                     .find('.list-with-dropdown__list')
                     .find('List');
-                expect(listContainer.find('.navigation-dropdow__toggle-button')).toHaveLength(1);
+                expect(listContainer.find('.list-with-dropdown__toggle-button')).toHaveLength(1);
             });
 
             it('the list will only render the max count of ListItems', async () => {
@@ -66,7 +66,7 @@ describe('The list with dropdown-overflow component', () => {
         describe('if the ListItems dont exceed the max count of visible items', () => {
             it('the list will not render a "more" button', async () => {
                 const listContainer = wrapper.find('.list-with-dropdown__list').find('List');
-                expect(listContainer.find('.navigation-dropdow__toggle-button')).toHaveLength(0);
+                expect(listContainer.find('.list-with-dropdown__toggle-button')).toHaveLength(0);
             });
 
             it('the list will render all ListItems', async () => {
