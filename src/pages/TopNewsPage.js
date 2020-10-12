@@ -44,7 +44,7 @@ const TopNewsPage = ({ countries, defaultSelectedCountryCode, headlinesMaxCount 
                 </div>
                 <PromoGrid>
                     {curHeadlines.map((headline, index) => (
-                        <Promo title={headline.title} key={index} />
+                        <Promo title={headline} key={index} />
                     ))}
                 </PromoGrid>
             </div>

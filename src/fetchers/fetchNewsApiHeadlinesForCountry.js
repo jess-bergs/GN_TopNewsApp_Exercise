@@ -20,7 +20,8 @@ const fetchNewsApiHeadlinesForCountry = async countryCode => {
         error(err.message);
     }
 
-    return result.articles;
+    const headlines = result.articles.map(article => article.title);
+    return headlines;
 };
 
 fetchNewsApiHeadlinesForCountry.propTypes = {
