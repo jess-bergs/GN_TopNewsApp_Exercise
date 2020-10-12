@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import { mount } from 'enzyme';
 import ListWithDropdownOverflow from '../../src/components/ListWithDropdownOverflow';
