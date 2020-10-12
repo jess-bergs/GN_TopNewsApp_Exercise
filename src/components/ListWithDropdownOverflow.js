@@ -26,11 +26,11 @@ const ListWithDropdownOverflow = ({ children, maxVisibleListItems }) => {
     return (
         <div className="list-with-dropdown__container">
             <div className="list-with-dropdown__list">
-                <List>{getListItems()}</List>
+                <List layout="horizontal">{getListItems()}</List>
             </div>
             {showDropdown && isOverflowing() && (
                 <div className="list-with-dropdown__dropdown">
-                    <List>{children.slice(maxVisibleListItems)}</List>
+                    <List layout="vertical">{children.slice(maxVisibleListItems)}</List>
                 </div>
             )}
         </div>
