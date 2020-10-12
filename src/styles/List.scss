@@ -9,12 +9,12 @@ $item-border-color: #fff;
     background-color: $background-color;
     font-family: Arial, Helvetica, freesans, sans-serif;
     margin: 0;
-    padding: 12px;
+    padding: $gel-spacing-unit * 1.5;
 
     .list__item-wrapper {
         border-right: 1px solid $item-border-color;
         display: inline;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: $gel-spacing-unit * 2;
+        padding-right: $gel-spacing-unit * 2;
     }
 }
