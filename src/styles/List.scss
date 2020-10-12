@@ -7,11 +7,23 @@ $item-border-color: #999;
 .list__container {
     margin: 0;
     padding: $gel-spacing-unit * 1.5;
+}
 
-    .list__item-wrapper {
-        border-right: 1px solid $item-border-color;
-        display: inline;
-        padding-left: $gel-spacing-unit * 2;
-        padding-right: $gel-spacing-unit * 2;
+.list__layout {
+    &--vertical {
+        .list__item-wrapper {
+            border-bottom: 1px solid $item-border-color;
+            display: block;
+            padding-top: $gel-spacing-unit * 1.5;
+            padding-bottom: $gel-spacing-unit;
+        }
+    }
+    &--horizontal {
+        .list__item-wrapper {
+            border-right: 1px solid $item-border-color;
+            display: inline;
+            padding-left: $gel-spacing-unit * 2;
+            padding-right: $gel-spacing-unit * 2;
+        }
     }
 }
