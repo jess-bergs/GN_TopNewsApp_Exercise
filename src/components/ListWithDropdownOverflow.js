@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes, { node } from 'prop-types';
 import List from './List';
 import ListItem from './ListItem';
 
@@ -34,6 +35,15 @@ const ListWithDropdownOverflow = ({ children, maxVisibleListItems }) => {
             )}
         </div>
     );
+};
+
+ListWithDropdownOverflow.propTypes = {
+    maxVisibleListItems: PropTypes.number,
+    children: node.isRequired,
+};
+
+ListWithDropdownOverflow.defaultProps = {
+    maxVisibleListItems: Infinity,
 };
 
 export default ListWithDropdownOverflow;
